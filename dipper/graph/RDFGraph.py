@@ -10,6 +10,7 @@ from dipper.graph.Graph import Graph as DipperGraph
 from dipper.utils.CurieUtil import CurieUtil
 from dipper import curie_map as curie_map_class
 from collections import defaultdict
+from dipper.utils.GraphUtils import GraphUtils
 
 LOG = logging.getLogger(__name__)
 
@@ -27,7 +28,7 @@ class RDFGraph(DipperGraph, ConjunctiveGraph):
 
     sub_counts = defaultdict(int)
     obj_counts = defaultdict(int)
-    sub_obj_cat_count = defaultdict(lambda: defaultdict(int))
+    sub_obj_cat_count = defaultdict(int)
 
     # make global translation table available outside the ingest
     with open(
@@ -52,7 +53,8 @@ class RDFGraph(DipperGraph, ConjunctiveGraph):
     def add_subject_object_category_counts(self, subject_category, object_category):
         self.sub_counts[subject_category] += 1
         self.obj_counts[object_category] += 1
-        self.sub_obj_cat_count[subject_category][object_category] += 1
+        # make subj/obj ID
+        self.sub_obj_cat_count[GraphUtils.make_id(str(subject_category) + str(object_category))] += 1
 
     def addTriple(
             self, subject_id, predicate_id, obj, object_is_literal=None,
@@ -157,3 +159,4 @@ class RDFGraph(DipperGraph, ConjunctiveGraph):
     def serialize(  # rdflib version
             self, destination=None, format='turtle', base=None, encoding=None):
         return ConjunctiveGraph.serialize(self, destination, format)
+

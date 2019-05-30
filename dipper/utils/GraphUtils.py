@@ -148,3 +148,15 @@ class GraphUtils:
         : return str
         '''
         return 'b' + hashlib.sha1(wordage.encode('utf-8')).hexdigest()[1:20]
+
+    @staticmethod
+    def make_id(long_string, prefix='MONARCH'):
+        """
+        a method to create DETERMINISTIC identifiers
+        based on a string's digest. currently implemented with sha1
+        :param long_string:
+        :return:
+
+        """
+        return ':'.join((prefix, GraphUtils.digest_id(long_string)))
+
