@@ -47,6 +47,7 @@ class EvidenceTestCase(unittest.TestCase):
             :has_sex_specificity PATO:0000384 .
 
         J:74619 a IAO:0000310 .
+        <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
         self.assertTrue(self.test_util.test_graph_equality(
             expected_triples, self.mgi.graph))

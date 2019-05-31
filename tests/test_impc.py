@@ -127,6 +127,7 @@ class EvidenceProvenanceTestCase(unittest.TestCase):
 <https://monarchinitiative.org/.well-known/genid/b41ad2bfd375c9de8888> a STATO:0000085 ;
     RO:0002353 <https://monarchinitiative.org/.well-known/genid/study> ;
     STATO:0000129 "8.885439E-007" .
+<https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
 
         self.assertTrue(self.test_util.test_graph_equality(
@@ -186,6 +187,8 @@ IMPRESS-procedure:15 a owl:NamedIndividual ;
 
 <https://www.mousephenotype.org/impress/protocol/175/15> a owl:NamedIndividual ;
     rdfs:label "X-ray" .
+
+<https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
 """
 
         # dbg
@@ -215,6 +218,8 @@ IMPRESS-procedure:15 a owl:NamedIndividual ;
 
     <https://www.mousephenotype.org/> a foaf:organization ;
         rdfs:label "International Mouse Phenotyping Consortium" .
+
+    <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
 
         """
         # dbg

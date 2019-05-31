@@ -55,6 +55,8 @@ class CTDTestCase(unittest.TestCase):
             PMID:56789 a IAO:0000013 .
             
             OMIM:188890 a owl:Class .
+
+        <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
         # test exact contents of graph
         self.assertTrue(self.test_util.test_graph_equality(

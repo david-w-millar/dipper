@@ -54,7 +54,7 @@ class RDFGraph(DipperGraph, ConjunctiveGraph):
         self.sub_counts[subject_category] += 1
         self.obj_counts[object_category] += 1
         # make subj/obj ID
-        label = str(subject_category) + str(object_category)
+        label = str(subject_category) + "-" + str(object_category)
         hashid = GraphUtils.make_id(label)
         self.sub_obj_cat_count[hashid] += 1
         ## add label for hash, so we can actually interpret subj/obj pairs

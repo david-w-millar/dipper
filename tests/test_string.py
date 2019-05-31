@@ -55,6 +55,8 @@ class StringTestFakeData(unittest.TestCase):
         # g1 <interacts with> g2
         triples = """
 ENSEMBL:ENSG00000001626 RO:0002434 ENSEMBL:ENSG00000004059 .
+
+        <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
 
         self.assertTrue(self.test_util.test_graph_equality(triples, string_db.graph))

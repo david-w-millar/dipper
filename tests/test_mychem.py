@@ -41,6 +41,8 @@ class TestMyChemParser(unittest.TestCase):
 
         SNOMED:386761002 rdfs:label "Local anesthesia" ;
             rdfs:subClassOf DOID:4 .
+
+        <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
 
         # dbg

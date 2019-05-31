@@ -59,6 +59,8 @@ class RGDTestCase(unittest.TestCase):
     RGD:2535 OBO:RO_0002200 MP:0003340 .
         RGDRef:1581841 a IAO:0000311 ;
         owl:sameAs PMID:12799311 .
+
+    <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
         # dbg
         logger.debug("Reference graph: %s",

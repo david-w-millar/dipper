@@ -44,6 +44,8 @@ class ReactomeTestCase(unittest.TestCase):
             rdfs:label "Scavenging by Class A Receptors" ;
             rdfs:subClassOf GO:0009987,
                 PW:0000001 .
+
+        <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
         self.assertTrue(self.test_util.test_graph_equality(
             triples, reactome.graph))

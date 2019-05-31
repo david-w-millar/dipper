@@ -88,6 +88,7 @@ class TestGwasSNPModel(unittest.TestCase):
         rdfs:label 'GRCh38chr5-21259029' ;
         faldo:position 21259029 ;
         faldo:reference OBO:CHR_GRCh38chr5 .
+    <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
 """
         # dbg
         LOG.debug(
@@ -113,6 +114,7 @@ class TestGwasSNPModel(unittest.TestCase):
         triples = """
         dbSNP:rs1491921 OBO:RO_0002528 ENSEMBL:107986180 ;
             OBO:RO_0002529 ENSEMBL:107986179 .
+        <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
         self.assertTrue(self.test_util.test_graph_equality(triples, self.source.graph))
 
@@ -139,6 +141,8 @@ class TestGwasSNPModel(unittest.TestCase):
             owl:deprecated true .
 
         dbSNP:rs12345 MONARCH:cliqueLeader true .
+
+        <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
         self.assertTrue(self.test_util.test_graph_equality(triples, self.source.graph))
 
@@ -189,6 +193,8 @@ class TestGwasSNPModel(unittest.TestCase):
             EFO:0006995 .
 
     PMID:25918132 a OBO:IAO_0000013 .
+
+    <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """.format(description)
 
         # dbg
@@ -332,6 +338,8 @@ dbSNP:rs7020413 a SO:0000694,
     rdfs:label "GRCh38chr9-37002118";
     faldo:position 37002118 ;
     faldo:reference CHR:GRCh38chr9 .
+
+    <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
 
         # dbg

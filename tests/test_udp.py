@@ -93,6 +93,7 @@ class UDPTestCase(unittest.TestCase):
             rdfs:label "patient_1" ;
             RO:0002200 DOID:4,
               HP:000001 .
+        <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
 
         self.assertTrue(self.test_util.test_graph_equality(
@@ -151,6 +152,8 @@ class UDPTestCase(unittest.TestCase):
         <https://monarchinitiative.org/.well-known/genid/ba5f377fc8c95d4a6d7a> a GENO:0000000 ;
             rdfs:label "patient_1 genotype" ;
             GENO:0000382 <https://monarchinitiative.org/.well-known/genid/b41e8da0787b45e24c4f> .
+
+        <https://monarchinitiative.org/MONARCH_bea29c34895afe316670> rdfs:label "None-None" .
         """
 
         self.assertTrue(self.test_util.test_graph_equality(triples, udp.graph))
