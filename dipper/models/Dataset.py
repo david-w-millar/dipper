@@ -220,8 +220,8 @@ class Dataset:
         for key in self.graph.obj_counts.keys():
             self.add_count_triples(key, self.globaltt['count'], self.graph.sub_counts[key])
 
-        # TODO: add triples for each subj/obj pair. need to change subj/obj's into labels: make_id("subj-obj") and model.addLabel(association_iri, "some label")
-            
+        for key in self.graph.sub_obj_cat_count.keys():
+            self.graph.addTriple(key, self.globaltt['count'], self.graph.sub_obj_cat_count[key], object_is_literal=True)
             
     def add_count_triples(self, subj, pred, obj):
         if subj is None:

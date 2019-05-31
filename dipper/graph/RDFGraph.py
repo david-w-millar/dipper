@@ -54,13 +54,19 @@ class RDFGraph(DipperGraph, ConjunctiveGraph):
         self.sub_counts[subject_category] += 1
         self.obj_counts[object_category] += 1
         # make subj/obj ID
-        self.sub_obj_cat_count[GraphUtils.make_id(str(subject_category) + str(object_category))] += 1
-
+        label = str(subject_category) + str(object_category)
+        hashid = GraphUtils.make_id(label)
+        self.sub_obj_cat_count[hashid] += 1
+        ## add label for hash, so we can actually interpret subj/obj pairs
+        self.add((self._getnode(hashid), self._getnode(self.globaltt['label']), Literal(label)))
+                
     def addTriple(
             self, subject_id, predicate_id, obj, object_is_literal=None,
             literal_type=None, subject_category=None, object_category=None):
 
         # add info about subject/object categories
+        if subject_category is not None:
+            foo = 1
         self.add_subject_object_category_counts(subject_category, object_category)
         
         # trying making infrence on type of object if none is supplied
