@@ -65,8 +65,6 @@ class RDFGraph(DipperGraph, ConjunctiveGraph):
             literal_type=None, subject_category=None, object_category=None):
 
         # add info about subject/object categories
-        if subject_category is not None:
-            foo = 1
         self.add_subject_object_category_counts(subject_category, object_category)
         
         # trying making infrence on type of object if none is supplied
